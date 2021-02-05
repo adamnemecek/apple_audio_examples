@@ -7,7 +7,7 @@ NSAlert extensions to simplify showing alert messages in the app.
 import Cocoa
 
 extension NSAlert {
-    
+
     class func showError(with message: String) {
         let alert = self.init()
         alert.messageText = message
@@ -15,7 +15,7 @@ extension NSAlert {
         alert.addButton(withTitle: "OK")
         alert.runModal()
     }
-    
+
     class func showConfirmDeletePreset(named name: String, completion: @escaping (Bool) -> Void) {
         guard let window = NSApplication.shared.mainWindow else { return }
         let alert = self.init()

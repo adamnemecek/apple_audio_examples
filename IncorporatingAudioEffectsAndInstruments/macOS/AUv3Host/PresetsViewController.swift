@@ -8,7 +8,7 @@ The view controller presenting the list of factory and user presets.
 import Cocoa
 
 class PresetsViewController: NSViewController {
-    
+
     weak var coordinator: Coordinator!
     
     @IBOutlet weak var presetTypeSegmentedControl: NSSegmentedControl!
