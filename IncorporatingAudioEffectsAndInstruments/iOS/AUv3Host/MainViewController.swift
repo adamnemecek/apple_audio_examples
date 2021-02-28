@@ -12,7 +12,7 @@ import CoreAudioKit
 class MainViewController: UIViewController {
 
     // MARK: - Outlets
-    
+
     let audioUnitManager = AudioUnitManager()
 
     @IBOutlet weak var playButton: UIButton!
@@ -24,7 +24,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var presetsTableView: UITableView!
     @IBOutlet weak var audioUnitsTableView: UITableView!
-    
+
     @IBOutlet weak var noViewLabel: UILabel!
     @IBOutlet weak var viewContainer: UIView!
 

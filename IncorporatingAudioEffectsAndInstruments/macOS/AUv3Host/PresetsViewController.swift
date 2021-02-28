@@ -10,20 +10,20 @@ import Cocoa
 class PresetsViewController: NSViewController {
 
     weak var coordinator: Coordinator!
-    
+
     @IBOutlet weak var presetTypeSegmentedControl: NSSegmentedControl!
     @IBOutlet weak var presetsTableView: NSTableView!
-    
+
     @IBOutlet weak var addButton: NSButton!
     @IBOutlet weak var deleteButton: NSButton!
-    
+
     @IBOutlet weak var topBarView: BarView!
     var topConstraint: NSLayoutConstraint?
-    
+
     var isFactoryPresetsSelected: Bool {
         return presetTypeSegmentedControl.selectedSegment == PresetType.factory.rawValue
     }
-    
+
     var isUserPresetsSelected: Bool {
         return presetTypeSegmentedControl.selectedSegment == PresetType.user.rawValue
     }
@@ -33,31 +33,31 @@ class PresetsViewController: NSViewController {
             if isUserPresetsSelected { visiblePresets = userPresets }
         }
     }
-    
+
     var factoryPresets = [Preset]() {
         didSet {
             if isFactoryPresetsSelected { visiblePresets = factoryPresets }
         }
     }
-    
+
     var visiblePresets = [Preset]() {
         didSet {
             presetsTableView.reloadData()
         }
     }
-    
+
     var supportsUserPresets = false {
         didSet {
             updateButtonState(isUserPresetsSelected && supportsUserPresets)
         }
     }
-    
+
     @IBAction func selectPresetType(_ sender: NSSegmentedControl) {
         updateButtonState(isUserPresetsSelected && supportsUserPresets)
         visiblePresets = isUserPresetsSelected ? userPresets : factoryPresets
         deleteButton.isEnabled = supportsUserPresets && isUserPresetsSelected && !visiblePresets.isEmpty
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(userPresetsChanged), name: .userPresetsChanged, object: nil)
@@ -66,14 +66,14 @@ class PresetsViewController: NSViewController {
         [addButton, deleteButton].forEach { $0.isEnabled = false }
         selectPresetType(presetTypeSegmentedControl)
     }
-    
+
     @objc
     func userPresetsChanged(notification: Notification) {
         guard let change = notification.object as? UserPresetsChange else { return }
-        
+
         let selectedRow = presetsTableView.selectedRow
         var rowIndexes: IndexSet?
-        
+
         switch change.type {
         case .save:
             // This app appends new user presets to the end of the list.
@@ -108,15 +108,15 @@ class PresetsViewController: NSViewController {
         if let rows = rowIndexes {
             presetsTableView.selectRowIndexes(rows, byExtendingSelection: false)
         }
-        
+
         // Update the delete button state based on if there are presets to delete
         deleteButton.isEnabled = !visiblePresets.isEmpty
     }
-    
+
     func updateButtonState(_ state: Bool) {
         [addButton, deleteButton].forEach { $0.isEnabled = state }
     }
-    
+
     override func updateViewConstraints() {
         // Always call superclass implementation
         defer {

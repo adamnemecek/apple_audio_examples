@@ -298,7 +298,7 @@ IA
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="fbQ-Dc-3Dp" customClass="BarView" customModule="AUv3Host" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="487" width="250" height="32"/>
+                                <rect key="frame" x="0.0" y="477" width="250" height="32"/>
                                 <subviews>
                                     <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="apx-yz-kCg" userLabel="AU Type Segmented Control">
                                         <rect key="frame" x="25" y="4" width="201" height="24"/>
@@ -321,16 +321,16 @@ IA
                                 </constraints>
                             </customView>
                             <visualEffectView appearanceType="inheritedVibrantLight" blendingMode="behindWindow" material="windowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="dYD-0u-eKO">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="487"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="477"/>
                                 <subviews>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="21" horizontalPageScroll="10" verticalLineScroll="21" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCf-rm-FqE">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="487"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="477"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="sum-Qe-Obn">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="487"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="477"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="7fQ-MO-DR4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="483"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="473"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="10" height="4"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -486,7 +486,7 @@ IA
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="PmK-bR-hjz" customClass="BarView" customModule="AUv3Host" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="524" width="250" height="32"/>
+                                <rect key="frame" x="0.0" y="514" width="250" height="32"/>
                                 <subviews>
                                     <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RIu-Ee-2lI" userLabel="Preset Type Segmented Control">
                                         <rect key="frame" x="64" y="4" width="122" height="24"/>
@@ -509,16 +509,16 @@ IA
                                 </constraints>
                             </customView>
                             <visualEffectView appearanceType="inheritedVibrantLight" blendingMode="behindWindow" material="windowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="ta5-U4-62m">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="514"/>
                                 <subviews>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="21" horizontalPageScroll="10" verticalLineScroll="21" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGX-Nt-dpo">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="524"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="514"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="YwR-eT-gdX">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="524"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="514"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="Bzf-KL-8rN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="520"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="510"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="10" height="4"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

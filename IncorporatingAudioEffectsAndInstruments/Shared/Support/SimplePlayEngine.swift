@@ -8,7 +8,7 @@ A simple playback engine built on AVAudioEngine and its related classes.
 import AVFoundation
 
 public class SimplePlayEngine {
-    
+
     // The engine's active unit node.
     private var activeAVAudioUnit: AVAudioUnit?
 
@@ -16,7 +16,7 @@ public class SimplePlayEngine {
 
     // Synchronizes starting/stopping the engine and scheduling file segments.
     private let stateChangeQueue = DispatchQueue(label: "com.example.apple-samplecode.StateChangeQueue")
-    
+
     // Playback engine.
     private let engine = AVAudioEngine()
     
@@ -35,7 +35,7 @@ public class SimplePlayEngine {
     private var componentType: OSType {
         return activeAVAudioUnit?.audioComponentDescription.componentType ?? kAudioUnitType_Effect
     }
-    
+
     private var isEffect: Bool {
         // SimplePlayEngine only supports effects or instruments.
         // If it's not an instrument, it's an effect
@@ -68,7 +68,7 @@ public class SimplePlayEngine {
             fatalError("Could not create AVAudioFile instance. error: \(error).")
         }
     }
-    
+
     private func setSessionActive(_ active: Bool) {
         #if os(iOS)
         do {
@@ -82,7 +82,7 @@ public class SimplePlayEngine {
     }
 
     // MARK: Playback State
-    
+
     public func startPlaying() {
         stateChangeQueue.sync {
             if !self.isPlaying { self.startPlayingInternal() }
@@ -103,20 +103,20 @@ public class SimplePlayEngine {
         }
         return isPlaying
     }
-    
+
     private func startPlayingInternal() {
         // assumptions: we are protected by stateChangeQueue. we are not playing.
         setSessionActive(true)
-        
+
         if isEffect {
             // Schedule buffers on the player.
             scheduleEffectLoop()
             scheduleEffectLoop()
         }
-        
+
         let hardwareFormat = engine.outputNode.outputFormat(forBus: 0)
         engine.connect(engine.mainMixerNode, to: engine.outputNode, format: hardwareFormat)
-        
+
         // Start the engine.
         do {
             try engine.start()
@@ -135,7 +135,7 @@ public class SimplePlayEngine {
 
         isPlaying = true
     }
-    
+
     private func stopPlayingInternal() {
         if isEffect {
             player.stop()
@@ -146,12 +146,12 @@ public class SimplePlayEngine {
         isPlaying = false
         setSessionActive(false)
     }
-    
+
     private func scheduleEffectLoop() {
         guard let file = file else {
             fatalError("`file` must not be nil in \(#function).")
         }
-        
+
         player.scheduleFile(file, at: nil) {
             self.stateChangeQueue.async {
                 if self.isPlaying {
@@ -292,7 +292,30 @@ public class SimplePlayEngine {
 
             let cbytes = UnsafeMutablePointer<UInt8>.allocate(capacity: 3)
 
+            if diff != nil {
+                print("diff \(diff!)")
+            }
+
             DispatchQueue.global(qos: .default).async {
+
+////                let z = CACurrentMediaTime()
+//                Swift.print("czx")
+//                if start == nil {
+//                    start = CACurrentMediaTime()
+//
+//                }
+//                else {
+//                    if end == nil {
+//                        end = CACurrentMediaTime()
+//
+//                    }
+//                    else {
+//                        diff = end! - start!
+//                        fatalError()
+////                        print(diff)
+//
+//                    }
+//                }
 
                 var step = 0
 

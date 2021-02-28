@@ -8,6 +8,10 @@ The view controller for the main view of the app.
 import Cocoa
 import AUv3FilterFramework
 
+import AVFoundation
+
+AudioUnitRenderActionFlags
+
 class MainViewController: NSViewController {
 
     let audioUnitManager = AudioUnitManager()

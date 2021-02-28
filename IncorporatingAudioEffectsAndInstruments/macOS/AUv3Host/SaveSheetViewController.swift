@@ -8,9 +8,9 @@ The view controller managing the "Save Preset" sheet.
 import Cocoa
 
 class SaveSheetViewController: NSViewController {
-    
+
     @IBOutlet weak var presetNameField: NSTextField!
-    
+
     var presetName: String? {
         let name = presetNameField.stringValue
         return !name.isEmpty ? name : nil
@@ -24,5 +24,5 @@ class SaveSheetViewController: NSViewController {
         presetNameField.objectValue = nil
         presentingViewController?.dismiss(self)
     }
-    
+
 }

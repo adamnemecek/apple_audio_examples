@@ -11,7 +11,7 @@ class ComponentViewController: NSViewController {
 
     @IBOutlet weak var containerView: NSView!
     @IBOutlet weak var feedbackLabel: NSTextField!
-    
+
     func presentUserInterface(_ subview: NSView?, labelText: String) {
         containerView.subviews.filter { $0 !== feedbackLabel } .forEach {
             $0.removeFromSuperview()
